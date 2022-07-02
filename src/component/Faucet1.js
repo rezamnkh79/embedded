@@ -32,7 +32,7 @@ const Faucet1 = (props) => {
         },[props.data])
    
         
-    return (<div style={{display:"flex", justifyContent:"space-around", width:'100%'}}>
+    return (<div style={{display:"flex", justifyContent:"space-around", width:'500%'}}>
         
 
          <DataTable className="table" value={schedule1} stripedRows resizableColumns>
