@@ -2,18 +2,28 @@ import React, { useEffect, useState } from "react";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import axios from 'axios';
-const Field = ["s_from", "s_to"];
 
 const Faucet2 = (props) => {
     const [schedule1,setSchedule1] = useState([])
     const [schedule2,setSchedule2] = useState([])
+    const actionBodyTemplate = (rowData) => {
+        console.log(rowData)
+        return (
+          <React.Fragment>
+            <a href={rowData.link}>
+                link
+            </a>
+          </React.Fragment>
+        );
+      };
     useEffect(()=>{
         setSchedule1(props.data[1].schedule)
         setSchedule2(props.data[2].schedule)
 
         
         },[props.data])
-    return (<div style={{display:"flex", justifyContent:"space-around"}}>
+
+    return (<div style={{display:"flex", justifyContent:"space-around", width:'100%'}} >
         {/* {data && 
         <table>
              <tr>
@@ -36,9 +46,14 @@ const Faucet2 = (props) => {
        
 
       
-        <DataTable value={schedule2}>
-                    <Column field="s_from" header="s_from"></Column>
-                    <Column field="s_to" header="s_to"></Column>
+        <DataTable className="table "value={schedule2} stripedRows resizableColumns>
+                    <Column field="s_from" ></Column>
+                    <Column field="s_to" ></Column>
+                    <Column
+                        body={actionBodyTemplate}
+                        
+                        bodyStyle={{ textAlign: "right" }}
+                    ></Column>
                    
         </DataTable>
      </div>

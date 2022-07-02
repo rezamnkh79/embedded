@@ -40,7 +40,7 @@ const Home = () => {
         setIs_clicked(true)
         // var root = ReactDOM.createRoot(document.getElementById('test'));
         
-        
+       
         // const element = <Faucet/>;
         // root.render(element);
     }
@@ -63,7 +63,16 @@ const Home = () => {
                 </div>
                 {/* <button class="reportB1" onClick={BOOOl}>Show Report</button> */}
                 <div id = "test">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <hr/>
                     {is_clicked && <Faucet1 data={data}/>}
+                    
                 </div>
             </div>
     
@@ -80,6 +89,14 @@ const Home = () => {
                 <div id = "test"></div>
                 <button class="reportB2" onClick={BOOOl} >Show Schedule</button>
                 <button class="reportB1" onClick={get_data} >update</button>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <hr/>
                 <div id = "test">
                     {is_clicked && <Faucet2 data={data}/>}
                 </div>
