@@ -26,16 +26,34 @@ const Faucet1 = (props) => {
         setSchedule1(props.data[1].schedule)
         setOn(props.data[1].is_on)
         setOk(props.data[1].is_ok)
-            // document.getElementById("t1").innerHTML = Is_on;
-            // document.getElementById("t2").innerHTML = Is_ok;
+        document.getElementById("t1").innerHTML = Is_on;
+        document.getElementById("t2").innerHTML = Is_ok;
         // console.log(flag)
         },[props.data])
    
         
-    return (<div style={{display:"flex", justifyContent:"space-around", width:'500%'}}>
+    return (<div style={{display:"flex", justifyContent:"space-around", width:'100%'}}>
         
-
-         <DataTable className="table" value={schedule1} stripedRows resizableColumns>
+       
+        <table className="ttt">
+        <tr>
+                
+                <th>is_on</th>
+                <th >is_ok</th>
+                
+            </tr>
+             <tr>
+                
+                 <th id ="t1"></th>
+                 <th id = "t2"></th>
+                 
+             </tr>
+             
+         </table>
+        
+       
+       
+        <DataTable className="table2" value={schedule1} stripedRows resizableColumns>
                     <Column field="s_from"></Column>
                     <Column field="s_to"></Column>
                     <Column
@@ -46,6 +64,9 @@ const Faucet1 = (props) => {
 
               
         </DataTable>
+       
+    
+    
         {schedule1.map((s,index)=>{return <a id={index} href={s.link}></a> })}
         
      </div>

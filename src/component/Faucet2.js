@@ -6,6 +6,8 @@ import axios from 'axios';
 const Faucet2 = (props) => {
     const [schedule1,setSchedule1] = useState([])
     const [schedule2,setSchedule2] = useState([])
+    const [Is_on,setOn] = useState()
+    const [Is_ok,setOk] = useState()
     const actionBodyTemplate = (rowData) => {
         console.log(rowData)
         return (
@@ -17,36 +19,37 @@ const Faucet2 = (props) => {
         );
       };
     useEffect(()=>{
-        setSchedule1(props.data[1].schedule)
-        setSchedule2(props.data[2].schedule)
-
         
+        setSchedule2(props.data[2].schedule)
+        
+        setOn(props.data[2].is_on)
+        setOk(props.data[2].is_ok)
+        console.log(Is_ok)
+        document.getElementById("t3").innerHTML = Is_on;
+        document.getElementById("t4").innerHTML = Is_ok;
         },[props.data])
 
     return (<div style={{display:"flex", justifyContent:"space-around", width:'100%'}} >
-        {/* {data && 
+        
         <table>
              <tr>
-                {console.log(data[0]?.s_form)}
-                 <th>{data[0]?.s_form}</th>
-                 <th>Contact</th>
-                 <th>Country</th>
+                
+                 <th>is_on</th>
+                 <th >is_ok</th>
+                 
              </tr>
              <tr>
-                 <td>Alfreds Futterkiste</td>
-                 <td>Maria Anders</td>
-                 <td>Germany</td>
-             </tr>
-             <tr>
-                 <td>Centro comercial Moctezuma</td>
-                 <td>Francisco Chang</td>
-                 <td>Mexico</td>
-             </tr>
-         </table>} */}
+                
+                <th id ="t3"></th>
+                <th id ="t4"></th>
+                
+            </tr>
+             
+         </table>
        
 
       
-        <DataTable className="table "value={schedule2} stripedRows resizableColumns>
+        <DataTable className="table2"value={schedule2} stripedRows resizableColumns>
                     <Column field="s_from" ></Column>
                     <Column field="s_to" ></Column>
                     <Column
