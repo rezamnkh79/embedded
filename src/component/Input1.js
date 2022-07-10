@@ -93,7 +93,7 @@ function Input1() {
   function handleClick() {
     
     // Send data to the backend via POST
-    // fetch('http://193.105.234.110:3000/update_schedule', {  // Enter your IP address here
+    // fetch('http://94.101.187.211:4000/update_schedule', {  // Enter your IP address here
     // headers: {
     //   'Content-Type': 'application/json',
     //   'Accept' :'application/json'
@@ -109,7 +109,7 @@ function Input1() {
     // })
     axios(
       {
-          url: 'http://193.105.234.110:3000/update_schedule',
+          url: 'http://94.101.187.211:4000/update_schedule',
           method: 'POST',
           data: jsonData,
           
@@ -128,7 +128,7 @@ function Input1() {
   ).catch(function (error) {
       console.log(error);
   });
-    // axios('http://193.105.234.110:3000/status', {
+    // axios('http://94.101.187.211:4000/status', {
     //   method: 'GET',
     //   headers: {
     //     'Access-Control-Allow-Origin': '*',
