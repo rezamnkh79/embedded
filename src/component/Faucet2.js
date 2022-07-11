@@ -68,7 +68,7 @@ export default Faucet2;
 
 // async function Faucet_Info(){
      
-//      let parsed=await axios('http://94.101.187.211:4000/status', {
+//      let parsed=await axios('http://94.101.187.211:3000/status', {
 //       method: 'GET',
 //       headers: {
 //         'Access-Control-Allow-Origin': '*',

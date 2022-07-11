@@ -17,7 +17,7 @@ const Home = () => {
     const get_data =() => {
         axios({
             method: "get",
-            url: 'http://94.101.187.211:4000/status',
+            url: 'http://94.101.187.211:3000/status',
             headers: {
                 'Access-Control-Allow-Origin': '*',
                 'Accept': 'application/json',
